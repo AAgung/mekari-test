@@ -31,6 +31,10 @@ class SampleTest extends TestCase
         $this->assertNotSame('input must be between number of lyric lines', $test->getLyricByRow(false, 11));
     }
 
+    /**
+     * Random Test
+     * sometimes, it will return error because the expected and actual resull could be same or not same
+     */
     public function testPhase2()
     {
         $test = new App\Test($this->lyrics);
@@ -43,13 +47,20 @@ class SampleTest extends TestCase
         $this->assertSame('This is the house', $test->getLyricSubjectByRow(false, 1));
         $this->assertSame('This is the malt and the house', $test->getLyricSubjectByRow(false, 2));
         $this->assertSame('This is the dog, the cat, the rat, the malt and the house', $test->getLyricSubjectByRow(false, 5));
-        $this->assertSame('This is the horse and the hound and the horn, the farmer sowing his corn, the rooster, the priest all shaven and shorn, the man all tattered and torn, the maiden all forlorn, the cow with the crumpled horn, the dog, the cat, the rat, the malt and the house', $test->getLyricSubjectByRow(false, 12));
+        $this->assertSame(
+            'This is the horse and the hound and the horn, the farmer sowing his corn, the rooster, the priest all shaven and shorn, the man all tattered and torn, the maiden all forlorn, the cow with the crumpled horn, the dog, the cat, the rat, the malt and the house',
+            $test->getLyricSubjectByRow(false, 12)
+        );
         $this->assertSame('input must be between number of lyric lines', $test->getLyricSubjectByRow(false, 14));
         $this->assertNotSame('This is the house', $test->getLyricSubjectByRow(false, 3));
         $this->assertNotSame('This is the dog, the cat, the rat, the malt and the house', $test->getLyricSubjectByRow(false, 12));
         $this->assertNotSame('input must be between number of lyric lines', $test->getLyricSubjectByRow(false, 11));
     }
 
+    /**
+     * Random Test
+     * sometimes, it will return error because the expected and actual resull could be same or not same
+     */
     public function testPhase4()
     {
         $test = new App\Test($this->lyrics);
