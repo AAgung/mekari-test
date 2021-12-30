@@ -4,6 +4,7 @@ use \PHPUnit\Framework\TestCase;
 
 class SampleTest extends TestCase
 {
+    // the lyrics must have delimeter '::' for every lines of lyric 
     private $lyrics = '
         the horse and the hound and the horn that belonged to::
         the farmer sowing his corn that kept::
